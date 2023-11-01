@@ -14,7 +14,10 @@ $users = array(
 
 session_start();
 if (empty($_POST)) {
-    $_SESSION["msg_error"] = "Ops, houve um erro inesperado!!!";
+    $_SESSION["msg_error"] = "
+    <p>Ops, houve um erro inesperado!!!</p>
+    <a href='index.html'>Voltar</a>
+    ";
     header("location:message.php");
     exit;
 }
@@ -26,12 +29,12 @@ foreach ($users as $user) {
     if ($user["username"] == $username && password_verify($password, $user["password"])) {
         // Autenticado com sucesso!!!
         $_SESSION["name"] = $user["name"];
-        header("location:dashboard.html");
+        header("location:dashboard.php");
         exit;
     }
 }
 
-$_SESSION["msg_error"] = "
+$_SESSION["msg_warning"] = "
 <p>Usuário ou senha inválidos!!!</p>
 <a href='index.html'>Voltar</a>
 ";
