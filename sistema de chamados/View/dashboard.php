@@ -1,3 +1,4 @@
+<?php require_once "../Controller/Auth_Verify.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -9,7 +10,6 @@
 </head>
 
 <body>
-    <?php session_start(); ?>
     <nav class="bg-info p-3 m-1 d-flex justify-content-between">
         <div>
             <a href="add-new-call.html" class="text-decoration-none text-white">Novo chamado</a>
