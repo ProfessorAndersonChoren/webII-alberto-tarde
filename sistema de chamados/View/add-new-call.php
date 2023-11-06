@@ -15,7 +15,7 @@
       <a href="add-new-call.html" class="text-white text-decoration-none">Abrir chamado</a>
       <a href="list-calls.html" class="text-white text-decoration-none">Listar chamados</a>
     </div>
-    <a href="../index.html" class="text-white text-decoration-none">Sair</a>
+    <a href="../Controller/Auth.php?operation=logout" class="text-white text-decoration-none">Sair</a>
   </nav>
   <main class="bg-primary card d-flex align-items-center mt-5">
     <form action="#" method="post" class="w-75 p-3">
