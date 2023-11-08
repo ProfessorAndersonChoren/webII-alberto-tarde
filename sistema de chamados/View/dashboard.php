@@ -15,10 +15,10 @@
             <a href="add-new-call.html" class="text-decoration-none text-white">Novo chamado</a>
             <a href="list-calls.html" class="text-decoration-none text-white">Exibir chamados</a>
         </div>
-        <a href="../index.html" class="text-decoration-none text-white">Sair</a>
+        <a href="../Controller/Auth.php?operation=logout" class="text-decoration-none text-white">Sair</a>
     </nav>
     <main class="text-center">
-        <h1>Bem-vindo de volta <?= $_SESSION["name"]; ?></h1>
+        <h1>Bem-vindo de volta <?= $_SESSION["user_data"]["name"]; ?></h1>
         <img src="https://cdn-icons-png.flaticon.com/512/3861/3861075.png" alt="Pessoa com Headset" width=200>
     </main>
 </body>
