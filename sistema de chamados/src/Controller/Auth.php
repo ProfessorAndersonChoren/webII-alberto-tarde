@@ -17,7 +17,7 @@ switch ($_GET["operation"]) {
 function logout()
 {
     unset($_SESSION["user_data"]);
-    header("location:../index.html");
+    header("location:../../index.html");
     exit;
 }
 
@@ -56,10 +56,7 @@ function login()
         }
     }
 
-    $_SESSION["msg_warning"] = "
-<p>Usuário ou senha inválidos!!!</p>
-<a href='../index.html'>Voltar</a>
-";
+    $_SESSION["msg_warning"] = "<p>Usuário ou senha inválidos!!!</p>";
     header("location:../View/message.php");
     exit;
 }

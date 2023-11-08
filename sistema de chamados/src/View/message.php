@@ -15,6 +15,7 @@
     ?>
         <div class="alert alert-danger">
             <p><?= $_SESSION["msg_error"]; ?></p>
+            <a href='../../index.html'>Voltar</a>
         </div>
     <?php
         unset($_SESSION["msg_error"]);
@@ -25,6 +26,7 @@
     ?>
         <div class="alert alert-warning">
             <p><?= $_SESSION["msg_warning"]; ?></p>
+            <a href='../../index.html'>Voltar</a>
         </div>
     <?php
         unset($_SESSION["msg_warning"]);
@@ -35,6 +37,7 @@
     ?>
         <div class="alert alert-success">
             <p><?= $_SESSION["msg_success"] ?></p>
+            <a href='../../index.html'>Voltar</a>
         </div>
     <?php
         unset($_SESSION["msg_success"]);
