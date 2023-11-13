@@ -8,6 +8,11 @@ class Equipment
     private $floor;
     private $room;
 
+    /**
+     * This method create a new Equipment object
+     * @param int $floor
+     * @param string $room
+    */
     public function __construct($floor, $room)
     {
         $this->floor = $floor;

@@ -8,6 +8,10 @@ class User{
     private $email;
     private $password;
 
+    /**
+     * This method create a new User object
+     * @param string $email
+     */
     public function __construct($email){
         $this->email = $email;
     }
