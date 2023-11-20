@@ -5,6 +5,7 @@ namespace QI\SistemaDeChamados\Controller;
 use QI\SistemaDeChamados\Model\Equipment;
 use QI\SistemaDeChamados\Model\User;
 use QI\SistemaDeChamados\Model\Call;
+use QI\SistemaDeChamados\Model\Repository\Connection;
 
 require_once dirname(dirname(__DIR__)) . "/vendor/autoload.php";
 
@@ -38,5 +39,11 @@ function insert()
         $_POST["description"],
     );
     // TODO Validar os dados recebidos
-    $error = array();
+    $errors = array();
+
+    // TODO Realizar a persistência
+    if(empty($errors)){
+        $conn = Connection::getConnection();
+        var_dump($conn);
+    }
 }
