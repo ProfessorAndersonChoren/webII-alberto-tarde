@@ -53,8 +53,6 @@ function insert()
         $call_repository = new CallRepository();
         $result = $call_repository->insert($call);
 
-        echo "Passou";
-
         if ($result) {
             $_SESSION["msg_success"] = "Chamado registrado com sucesso!!!";
         } else {
