@@ -8,8 +8,8 @@ create table if not exists users(
 );
 create table if not exists equipments(
 	id tinyint unsigned primary key auto_increment,
-    floor tinyint not null,
-    room tinyint not null
+    floor tinyint unsigned not null,
+    room tinyint unsigned not null
 );
 create table if not exists calls(
 	id tinyint unsigned primary key auto_increment,
