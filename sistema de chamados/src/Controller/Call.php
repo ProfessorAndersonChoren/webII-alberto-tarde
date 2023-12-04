@@ -18,6 +18,12 @@ switch ($_GET["operation"]) {
     case "findAll":
         findAll();
         break;
+    case "findOne":
+        findOne();
+        break;
+    case "delete":
+        delete();
+        break;
     default:
         $_SESSION["msg_warning"] = "Operação inválida!!!";
         header("location:../View/message.php");
@@ -71,8 +77,38 @@ function insert()
     }
 }
 
-function findAll(){
+function findAll()
+{
     $call_repository = new CallRepository();
     $_SESSION["list_of_calls"] = $call_repository->findAll();
     header("location:../View/list-of-calls.php");
+}
+
+function findOne()
+{
+}
+
+function delete()
+{
+    $id = $_GET["code"];
+    if (empty($id)) {
+        $_SESSION["msg_error"] = "O código do chamado é inválido!!!";
+        header("location:../View/message.php");
+        exit;
+    }
+    try {
+        $call_repository = new CallRepository();
+        $result = $call_repository->delete($id);
+        if ($result) {
+            $_SESSION["msg_success"] = "Chamado registrado com sucesso!!!";
+        } else {
+            $_SESSION["msg_warning"] = "Lamento, não foi possível remover o chamado!!!";
+        }
+    } catch (Exception $exception) {
+        $_SESSION["msg_error"] = "Ops. Houve um erro inesperado em nossa base de dados!!!";
+        $log = $exception->getFile() . " - " . $exception->getFile() . " - " . $exception->getMessage();
+        Logger::writeLog($log);
+    } finally {
+        header("location:../View/message.php");
+    }
 }

@@ -9,11 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
 
-<body>
+<body class="m-5">
     <nav class="bg-info p-3 m-1 d-flex justify-content-between">
         <div>
-            <a href="add-new-call.php" class="text-decoration-none text-white">Novo chamado</a>
-            <a href="../Controller/Call.php?operation=findAll" class="text-decoration-none text-white">Exibir chamados</a>
+            <a href="#" class="text-white text-decoration-none">Dashboard</a>
+            <a href="add-new-call.php" class="text-decoration-none text-white">Abrir chamado</a>
+            <a href="../Controller/Call.php?operation=findAll" class="text-decoration-none text-white">Listar chamados</a>
         </div>
         <a href="../Controller/Auth.php?operation=logout" class="text-decoration-none text-white">Sair</a>
     </nav>

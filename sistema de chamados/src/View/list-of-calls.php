@@ -13,6 +13,7 @@
 <body class="m-5">
     <nav class="bg-info d-flex justify-content-between p-3">
         <div>
+            <a href="dashboard.php" class="text-white text-decoration-none">Dashboard</a>
             <a href="add-new-call.php" class="text-white text-decoration-none">Abrir chamado</a>
             <a href="#" class="text-white text-decoration-none">Listar chamados</a>
         </div>
@@ -64,6 +65,9 @@
                                 <a href="../Controller/Call.php?operation=findOne&code=<?= $call["id"] ?>" class="btn btn-warning" title="Editar chamado">
                                     <i class="bi bi-pencil"></i>
                                 </a>
+                                <a href="../Controller/Call.php?operation=delete&code=<?= $call["id"] ?>" class="btn btn-danger" title="Deletar o chamado">
+                                <i class="bi bi-trash"></i>
+                            </a>
                             </div>
                         </td>
                     </tr>
