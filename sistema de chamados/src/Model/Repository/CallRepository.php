@@ -47,4 +47,18 @@ class CallRepository
         $stmt = $this->connection->query("delete from calls where id=$id");
         return $stmt->execute();
     }
+
+    /**
+     * Update a call in database
+     * @param Call $call
+     * @return bool
+     */
+    function update($call){
+        $stmt = $this->connection->prepare("update calls set classification = ?, description = ?, notes = ?where id= ?");
+        $stmt->bindParam(1, $call->classification);
+        $stmt->bindParam(2, $call->description);
+        $stmt->bindParam(3, $call->notes);
+        $stmt->bindParam(4, $call->id);
+        return $stmt->execute();
+    }
 }
